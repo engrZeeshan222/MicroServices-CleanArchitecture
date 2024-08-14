@@ -180,14 +180,8 @@ namespace Clean.Infrastructure.Repositories
         }
         private async Task SendSMS(string phoneNumber, string message)
         {
-            /*
-             * Need to remove empty string and add env variables 
-             */
-
-            string accountSid = "";
-            //Environment.GetEnvironmentVariable("AC264b62e71db3732ca0ee2e68f2de0fbb");
-            string authToken = "";
-                //Environment.GetEnvironmentVariable("ece14c85af895e29927fbb208b476bde");
+            string accountSid = Environment.GetEnvironmentVariable("AC264b62e71db3732ca0ee2e68f2de0fbb");
+            string authToken = Environment.GetEnvironmentVariable("ece14c85af895e29927fbb208b476bde");
 
             TwilioClient.Init(accountSid, authToken);
 
@@ -201,10 +195,8 @@ namespace Clean.Infrastructure.Repositories
         }
         private async Task SendWhatsApp(string phoneNumber, string message)
         {
-            string accountSid = "";
-                //Environment.GetEnvironmentVariable("AC264b62e71db3732ca0ee2e68f2de0fbb");
-            string authToken = ""; 
-                Environment.GetEnvironmentVariable("ece14c85af895e29927fbb208b476bde");
+            string accountSid = Environment.GetEnvironmentVariable("AC264b62e71db3732ca0ee2e68f2de0fbb");
+            string authToken = Environment.GetEnvironmentVariable("ece14c85af895e29927fbb208b476bde");
 
             TwilioClient.Init(accountSid, authToken);
 
